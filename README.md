@@ -20,8 +20,16 @@ a growing collection of the best resources i've found to personally learn variou
 - [Cross Entropy Loss (5 mins)](https://www.youtube.com/watch?v=Pwgpl9mKars): a natural extenson of the KL Divergence
 - [Gradient Descent - THE MATH YOU SHOULD KNOW (20 mins)](https://www.youtube.com/watch?v=-p1ldISb90Q&list=PLTl9hO2Oobd-_5sGLnbgE8Poer1Xjzz4h&index=3): logistic regression derivation
 
+## software
+
+- 
+
 ## python
 
+- [Installing Python 3 on Mac OS X (10 mins)](https://docs.python-guide.org/starting/install3/osx/)
+- [Python Virtual Environments: A Primer (25 mins)](https://realpython.com/python-virtual-environments-a-primer/)
+- [Python Modules and Packages – An Introduction (25 mins)](https://realpython.com/python-modules-packages/)
+- [Using Python's pip to Manage Your Projects' Dependencies (25 mins)](https://realpython.com/what-is-pip/)
 - [You should put this in all your Python scripts | if __name__ == '__main__': ...
  (7 mins)](https://www.youtube.com/watch?v=g_wlZ9IhbTs&list=PL5mE9EP9ql4DOGjU3Nqyc02IiDvi3ep3U&index=7)
 - [super, Python's most misunderstood feature.
