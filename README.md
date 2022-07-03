@@ -28,18 +28,30 @@ the order in which I wish I learned things
 - [Tensor Operations (15 mins)](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorbasics.py)
 - [Unreasonable Effectiveness of Recurrent Neural Networks (30 mins)](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 - [How convolutional neural networks work (1 hour)](https://www.youtube.com/watch?v=JB8T_zN7ZC0)
-- [Transfer Learning + Transformer Models (45 mins)](https://www.youtube.com/watch?v=LE3NfEULV6k)=
+- [Transfer Learning + Transformer Models (45 mins)](https://www.youtube.com/watch?v=LE3NfEULV6k)
 
 ## machine learning
 
 - [Decision Tree Classification (10 mins)](https://www.youtube.com/watch?v=ZVR2Way4nwQ)
 - [Random Forest Algorithm (8 mins)](https://www.youtube.com/watch?v=v6VJ2RO66Ag)
+- [Gaussian Process (24 mins)](https://www.youtube.com/watch?v=UBDgSHPxVME)
+
+- loss
+    - [KL Divergence (5 mins)](https://www.youtube.com/watch?v=SxGYPqCgJWM)
+    - [Cross Entropy Loss (5 mins)](https://www.youtube.com/watch?v=Pwgpl9mKars)
+    - [Gradient Descent - THE MATH YOU SHOULD KNOW (20 mins)](https://www.youtube.com/watch?v=-p1ldISb90Q&list=PLTl9hO2Oobd-_5sGLnbgE8Poer1Xjzz4h&index=3)
 
 ## statistics
 
-- [KL Divergence (5 mins)](https://www.youtube.com/watch?v=SxGYPqCgJWM)
-- [Cross Entropy Loss (5 mins)](https://www.youtube.com/watch?v=Pwgpl9mKars)
-- [Gradient Descent - THE MATH YOU SHOULD KNOW (20 mins)](https://www.youtube.com/watch?v=-p1ldISb90Q&list=PLTl9hO2Oobd-_5sGLnbgE8Poer1Xjzz4h&index=3)
+- distributions
+    - [How to Learn Probability Distributions (11 mins)](https://www.youtube.com/watch?v=mBCiKUzwdMs)
+    
+- theorems
+    - [Jensen's Inequality (7 mins)](https://www.youtube.com/watch?v=u0_X2hX6DWE)
+    - [The Bias Variance Trade-Off (15 mins)](https://www.youtube.com/watch?v=FcXQKsZKRUs)
+
+- concepts
+    - [Importance Sampling (13 mins)](https://www.youtube.com/watch?v=C3p2wI4RAi8)
 
 ## node
 
