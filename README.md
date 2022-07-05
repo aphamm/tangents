@@ -30,6 +30,9 @@ the order in which I wish I learned things
 - [How convolutional neural networks work (1 hour)](https://www.youtube.com/watch?v=JB8T_zN7ZC0)
 - [Transfer Learning + Transformer Models (45 mins)](https://www.youtube.com/watch?v=LE3NfEULV6k)
 
+- Graph Neural Nets
+    - [A Gentle Introduction to Graph Neural Networks](https://distill.pub/2021/gnn-intro/)
+
 ## machine learning
 
 - [Decision Tree Classification (10 mins)](https://www.youtube.com/watch?v=ZVR2Way4nwQ)
