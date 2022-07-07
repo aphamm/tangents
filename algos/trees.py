@@ -1,34 +1,33 @@
 """
 TREES.PY
 
-Written by: Austin Pham
-
 Terminology:
 - Internal Node: non-root node
 - Leaf Node: no children
+
 - Ancestors: all nodes reachable from current node moving up
 - Descendent: all nodes reachable from current node moving down
-- Level: # of ancestors from node to root
-- Height: # of edges on longest path from node to leaf
-- Depth: # of edges from node to root
+
+- Depth of Node: # of edges from N to root
+- Height of Tree: depth of deepest node
 """
 
 def in_order_traversal(root):
-    if root is not None:
+    if root:
         # process left branch, current node, then right branch
         in_order_traversal(root.left)
         print(root.val) 
         in_order_traversal(root.right)
 
 def pre_order_traversal(root):
-    if root is not None:
+    if root:
         # process current node, left branch, then right branch
         print(root.val)
         pre_order_traversal(root.left)
         pre_order_traversal(root.right)
 
 def post_order_traversal(root):
-    if root is not None:
+    if root:
         # process left branch, right branch, then current node
         post_order_traversal(root.left)
         post_order_traversal(root.right)
@@ -46,26 +45,27 @@ The following binary tree looks like this:
 Check out the following traversal methods.
 """
 
-class BinaryNode:
+class Node:
     def __init__(self, val, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-def tree(nodes, f):
+def make_tree(nodes, f):
     val = next(nodes)
     if val == 'x': return None
     # wow a post_order_traversal, which makes sense since we
     # need to know the left/right children before creating current
-    left = tree(nodes, f)
-    right = tree(nodes, f)
-    return BinaryNode(f(val), left, right)
+    left = make_tree(nodes, f)
+    right = make_tree(nodes, f)
+    return Node(f(val), left, right)
 
-binary = tree(iter([5, 1, 3, "x", "x", 8, "x", "x", 6, 2, "x", "x", "x"]), int)
+node = make_tree(iter([5, 1, 3, "x", "x", 8, "x", "x", 6, 2, "x", "x", "x"]), int)
 
-# in_order_traversal(binary)
-# pre_order_traversal(binary)
-# post_order_traversal(binary)
+# run traversals here !
+# in_order_traversal(node)
+# pre_order_traversal(node)
+# post_order_traversal(node)
 
 class NonBinaryNode:
     def __init__(self, val, children=None):

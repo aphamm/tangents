@@ -6,6 +6,8 @@ the order in which I wish I learned things
 ## python
 
 - [Installing Python 3 on Mac OS X (10 mins)](https://docs.python-guide.org/starting/install3/osx/)
+- [Everything About Python — Beginner To Advanced](https://medium.com/fintechexplained/everything-about-python-from-beginner-to-advance-level-227d52ef32d2)
+- [Defining Your Own Python Function](https://realpython.com/defining-your-own-python-function/)
 - [Python Modules and Packages – An Introduction (25 mins)](https://realpython.com/python-modules-packages/)
 - [Using Python's pip to Manage Your Projects' Dependencies (25 mins)](https://realpython.com/what-is-pip/)
 - [Python Virtual Environments: A Primer (25 mins)](https://realpython.com/python-virtual-environments-a-primer/)
@@ -26,9 +28,11 @@ the order in which I wish I learned things
 ## deep-learning
 
 - [Tensor Operations (15 mins)](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorbasics.py)
-- [Unreasonable Effectiveness of Recurrent Neural Networks (30 mins)](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+- [DEEP LEARNING WITH PYTORCH: A 60 MINUTE BLITZ](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
 - [How convolutional neural networks work (1 hour)](https://www.youtube.com/watch?v=JB8T_zN7ZC0)
+- [Unreasonable Effectiveness of Recurrent Neural Networks (30 mins)](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 - [Transfer Learning + Transformer Models (45 mins)](https://www.youtube.com/watch?v=LE3NfEULV6k)
+- [TRANSFORMERS FROM SCRATCH](http://peterbloem.nl/blog/transformers)
 
 - Graph Neural Nets
     - [A Gentle Introduction to Graph Neural Networks](https://distill.pub/2021/gnn-intro/)
