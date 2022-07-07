@@ -9,6 +9,18 @@ Think: "i am just a node, not a tree. i only know my value & my children"
     "how should i proceed with my value. then recurse on my children"
 
 Before Coding: write out STATE, PROCESS, RETURN
+
+contains_target
+find_max
+104. Maximum Depth of Binary Tree (Easy)
+1448. Count Good Nodes in Binary Tree (Medium)
+110. Balanced Binary Tree (Easy)
+297. Serialize and Deserialize Binary Tree (Hard)
+236. Lowest Common Ancestor of a Binary Tree (Medium)
+700. Search in a Binary Search Tree (Easy)
+98. Validate Binary Search Tree (Medium)
+701. Insert into a Binary Search Tree (Medium)
+226. Invert Binary Tree (Easy)
 """
 
 def template(node, state):
@@ -307,7 +319,7 @@ def lowest_common_ancestor(node: Node, target1: int, target2: int) -> Node:
     # no LCA/target found
     return None
 
-def test6():
+def test7():
     assert lowest_common_ancestor(tree1, 3, 4) == tree1
     assert lowest_common_ancestor(tree3, 2, 5) == tree3.left
     assert lowest_common_ancestor(tree3, 7, 4) == tree3.right
@@ -376,7 +388,7 @@ def search_binary_tree(node: Node, target: int) -> bool:
     else:
         return search_binary_tree(node.right, target)
 
-def test7():
+def test8():
     assert search_binary_tree(tree4, 1) == False
     assert search_binary_tree(tree4, 9) == True
     assert search_binary_tree(tree5, 9) == True
@@ -407,7 +419,7 @@ def valid_binary_tree(node: Node) -> bool:
         return dfs(node.left, min, node.val) and dfs(node.right, node.val, max)
     return dfs(node, float('-inf'), float('inf'))
 
-def test8():
+def test9():
     assert valid_binary_tree(tree1) == False
     assert valid_binary_tree(tree2) == False
     assert valid_binary_tree(tree3) == False
@@ -441,7 +453,7 @@ def insert_bst(node: Node, value: int) -> Node:
     # value already exists
     return node
 
-def test9():
+def test10():
     assert seralize(insert_bst(tree4, 10)) == "5 3 x 4 x x 6 x 9 x 10 x x"
     assert seralize(insert_bst(tree5, 10)) == "6 3 2 1 x x x 4 x 5 x x 8 7 x x 9 x 10 x x"
     print("Paw-🐶-some Job!")
@@ -466,7 +478,7 @@ def invert_binary_tree(node: Node) -> Node:
         return None
     return Node(node.val, invert_binary_tree(node.right), invert_binary_tree(node.left))
 
-def test10():
+def test11():
     assert seralize(invert_binary_tree(tree4)) == "5 6 9 x x x 3 4 x x x"
     assert seralize(invert_binary_tree(tree5)) == "6 8 9 x x 7 x x 3 4 5 x x x 2 x 1 x x"
     print("Paw-🐶-some Job!")
