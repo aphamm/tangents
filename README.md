@@ -1,5 +1,5 @@
 
-# knowledge-vault
+# tangents
 
 the order in which I wish I learned things
 
@@ -19,22 +19,28 @@ the order in which I wish I learned things
 
 ## software
 
-- [The 50 Most Popular Linux & Terminal Commands - Full Course for Beginners (5 hours)](https://www.youtube.com/watch?v=ZtqBQ68cfJc)
-- [POSIX COMPLIANT FILESYSTEMS (15 mins)](https://grimoire.carcano.ch/blog/posix-compliant-filesystems/)
 - [~/.dotfiles in 100 Seconds (2 mins)](https://www.youtube.com/watch?v=r_MpUP6aKiQ)
 - [Learn Makefiles (30 mins)](https://makefiletutorial.com/)
-- [Git Explained — not just commands — in Under 8 minutes! (8 mins)](https://towardsdatascience.com/git-help-all-2d0bb0c31483)
 
 ## deep-learning
 
-- [Tensor Operations (15 mins)](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorbasics.py)
-- [DEEP LEARNING WITH PYTORCH: A 60 MINUTE BLITZ](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
-- [How convolutional neural networks work (1 hour)](https://www.youtube.com/watch?v=JB8T_zN7ZC0)
-- [Unreasonable Effectiveness of Recurrent Neural Networks (30 mins)](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
-- [Transfer Learning + Transformer Models (45 mins)](https://www.youtube.com/watch?v=LE3NfEULV6k)
-- [TRANSFORMERS FROM SCRATCH](http://peterbloem.nl/blog/transformers)
+- pytorch
 
-- Graph Neural Nets
+    - [Deep Learning with PyTorch: A 60 Minute Blitz](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html): (7/8/22)
+    - [Tensor Operations (15 mins)](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorbasics.py)
+
+- convolutional
+
+     - [How convolutional neural networks work (1 hour)](https://www.youtube.com/watch?v=JB8T_zN7ZC0)
+
+- recurrent
+
+    - [Unreasonable Effectiveness of Recurrent Neural Networks (30 mins)](https://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+    - [Transfer Learning + Transformer Models (45 mins)](https://www.youtube.com/watch?v=LE3NfEULV6k)
+    - [TRANSFORMERS FROM SCRATCH](http://peterbloem.nl/blog/transformers)
+
+- graph
+
     - [A Gentle Introduction to Graph Neural Networks](https://distill.pub/2021/gnn-intro/)
 
 ## machine learning
@@ -44,6 +50,7 @@ the order in which I wish I learned things
 - [Gaussian Process (24 mins)](https://www.youtube.com/watch?v=UBDgSHPxVME)
 
 - loss
+
     - [KL Divergence (5 mins)](https://www.youtube.com/watch?v=SxGYPqCgJWM)
     - [Cross Entropy Loss (5 mins)](https://www.youtube.com/watch?v=Pwgpl9mKars)
     - [Gradient Descent - THE MATH YOU SHOULD KNOW (20 mins)](https://www.youtube.com/watch?v=-p1ldISb90Q&list=PLTl9hO2Oobd-_5sGLnbgE8Poer1Xjzz4h&index=3)
@@ -51,13 +58,16 @@ the order in which I wish I learned things
 ## statistics
 
 - distributions
+
     - [How to Learn Probability Distributions (11 mins)](https://www.youtube.com/watch?v=mBCiKUzwdMs)
     
 - theorems
+
     - [Jensen's Inequality (7 mins)](https://www.youtube.com/watch?v=u0_X2hX6DWE)
     - [The Bias Variance Trade-Off (15 mins)](https://www.youtube.com/watch?v=FcXQKsZKRUs)
 
 - concepts
+
     - [Importance Sampling (13 mins)](https://www.youtube.com/watch?v=C3p2wI4RAi8)
 
 ## node
@@ -68,27 +78,33 @@ the order in which I wish I learned things
 ## production
 
 - basics
+
     - [Ableton Live 10 & 11 Beginners Tutorial (80 mins)](https://www.youtube.com/watch?v=25Zcy8Uu4dw&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=1&t=3121s)
     - [100+ Ableton Live Shortcuts (13 mins)](https://www.youtube.com/watch?v=OvhlDsOyktE&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=2)
     
 - sampling
-    - [3 Levels of Sampling - Beginner to PRO (techniques/tips/history) (11 mins)](https://www.youtube.com/watch?v=cREeQbQyf4Q&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=10)
-    - [The beautiful art of sampling & how to find your (voice or style) within it (14 mins)](https://www.youtube.com/watch?v=aG5LUXJt720&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=45)
+
+    - [3 Levels of Sampling - Beginner to PRO (11 mins)](https://www.youtube.com/watch?v=cREeQbQyf4Q&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=10)
+    - [The beautiful art of sampling (14 mins)](https://www.youtube.com/watch?v=aG5LUXJt720&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=45)
    
 - mixing
+
     - [3 Rules of #EQ (12 mins)](https://www.youtube.com/watch?v=7H3cHfV8rXI&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=13)
     - [4 Rules of #Mixing (14 mins)](https://www.youtube.com/watch?v=WJMQOgpwTSY&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=14)
     - [6 Rules of #Compression (12 mins)](https://www.youtube.com/watch?v=LX-DMXKWeNs&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=15)
 
 - rhytmn
-    - [How to make drum patterns - rhythms every producer SHOULD know (26 mins)](https://www.youtube.com/watch?v=zOVSOvsTXto&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=30)
+
+    - [How to make drum patterns (26 mins)](https://www.youtube.com/watch?v=zOVSOvsTXto&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=30)
 
 - vocals
+
     - [8 Vocal Compression Secrets for Every Mix (15 mins)](https://www.youtube.com/watch?v=O8mx7rFQwBw&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=16)
 
 - advice
-    - [I watched 300 hours of music production streams, here are my 17 FAVORITE tips (16 mins)](https://www.youtube.com/watch?v=JQHvtinwQQ8&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=9)
+
+    - [I watched 300 hours of music production streams (16 mins)](https://www.youtube.com/watch?v=JQHvtinwQQ8&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=9)
 
 ## physiology
 
-- [How To Get A Huge Bench Press with Perfect Technique (12 mins)](https://www.youtube.com/watch?v=vcBig73ojpE)
+- [How To Get A Huge Bench Press (12 mins)](https://www.youtube.com/watch?v=vcBig73ojpE)
