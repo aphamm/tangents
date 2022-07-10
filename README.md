@@ -39,6 +39,11 @@ the order in which I wish I learned things
     - [Transfer Learning + Transformer Models (45 mins)](https://www.youtube.com/watch?v=LE3NfEULV6k)
     - [Transformers from Scratch](http://peterbloem.nl/blog/transformers)
 
+- attention
+
+    - [GPT-3: Language Models are Few-Shot Learners (60 mins)](https://www.youtube.com/watch?v=SY5PvZrJhLE): (7/10/22)
+    - [OpenAI CLIP: ConnectingText and Images (48 mins)](https://www.youtube.com/watch?v=T9XSU0pKX2E): (7/10/22)
+
 - graph
 
     - [A Gentle Introduction to Graph Neural Networks](https://distill.pub/2021/gnn-intro/): (7/5/22)

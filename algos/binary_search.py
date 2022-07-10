@@ -169,7 +169,7 @@ def test5():
     print("Purr-🐱-haps it Passed!")
 
 """
-153. Find Minimum in Rotated Sorted Array
+153. Find Minimum in Rotated Sorted Array (Medium)
 https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 
 input: arr
@@ -237,7 +237,7 @@ def test7():
     print("Purr-🐱-haps it Passed!")
 
 """
-1011. Capacity To Ship Packages Within D Days
+1011. Capacity To Ship Packages Within D Days (Medium)
 https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 
 input: weights, days -> [1, 2, 3, 4, 5], 5
