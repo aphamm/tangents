@@ -2,7 +2,9 @@
 DEPTH_FIRST.PY
 
 Concept: DFS is the algorithm that implements backtracking (retracing)
+
 Divide & Conquer: split into subproblems of left/right subtree until simple enough to solve directly (null node or found target)
+
 Usage: pre_order tree traversal, combinatorial, graph
 
 Think: "i am just a node, not a tree. i only know my value & my children"
@@ -10,8 +12,8 @@ Think: "i am just a node, not a tree. i only know my value & my children"
 
 Before Coding: write out STATE, PROCESS, RETURN
 
-contains_target
-find_max
+000. Find Value in Binary Tree
+000. Find Max of Binary Tree
 104. Maximum Depth of Binary Tree (Easy)
 1448. Count Good Nodes in Binary Tree (Medium)
 110. Balanced Binary Tree (Easy)
@@ -23,307 +25,221 @@ find_max
 226. Invert Binary Tree (Easy)
 """
 
-def template(node, state):
+def dfs(node, state):
     if not node:
         return None
     # STATES (func args): pass info from parent to children
         # use to compute return value for current node
-    left = template(node.left, state)
-    right = template(node.right, state)
+    left = dfs(node.left, state)
+    right = dfs(node.right, state)
     # PROCESS: decide what current node should do with inputs
     value = left + right
     # RETURN: pass info from children to parent
         # after processing current node, what info do we want to share
     return value
 
-from trees import Node, make_tree
-
 """
-tree1:
-            2
-        1       4         
-      x   3   x   6
-         x x     x x
-"""
+000. Find Value in Binary Tree
+code: https://github.com/onlypham/tangents
 
-tree1 = make_tree(iter([2, 1, "x", 3, "x", "x", 4, "x", 6, "x", "x"]), int)
-
-"""
-tree2:
-                     7
-            4               4         
-        2       3        3      6
-      2   x   x   8    x   x  x   9
-     x x         x x             x x
-"""
-
-tree2 = make_tree(iter([7, 4, 2, 2, "x", "x", "x", 3, "x", 8, "x", "x", 4, 3, "x", "x", 6, "x", 9, "x", "x"]), int)
-
-"""
-tree3:
-                     8
-            6               7         
-        1      11        3      6
-      9   x   x   5    x   4  x   x
-     2 x         x x      x x
-    x x
-"""
-
-tree3 = make_tree(iter([8, 6, 1, 9, 2, "x", "x", "x", "x", 11, "x", 5, "x", "x", 7, 3, "x", 4, "x", "x", 6, "x", "x"]), int)
-
-"""
-algo: contains_target
 input: node, target
-output: True/False
+output: True/False (bool)
 time: O(N) -> visit every node once
 
-states: tell children what target to look for
-
+state: tell children what target to look for
 process: check if target is in left/right subtree
-
-return: tell parent if I found target my subtree (bool)
+return: tell parent if I found target my subtree
 """
 
-def contains_target(node: Node, target: int) -> bool:
-    if not node:
-        return False
-    if node.val == target:
-        return True
-    # check if target is in left/right subtree
-    in_left_subtree = contains_target(node.left, target)
-    in_right_subtree = contains_target(node.right, target)
-    # return True if target in either/both subtree
-    return in_left_subtree or in_right_subtree
-
-def test1():
-    assert contains_target(tree1, 6) == True
-    assert contains_target(tree1, 9) == False
-    assert contains_target(tree2, 7) == True
-    assert contains_target(tree2, 1) == False
-    assert contains_target(tree3, 6) == True
-    assert contains_target(tree3, 12) == False
-    print("Paw-🐶-some Job!")
+class Solution:
+    def containsTarget(self, root: Optional[TreeNode], val) -> bool:
+        if not root:
+            return False
+        # return True if we find target
+        if root.val == val:
+            return True
+        # check if target is in left/right subtree
+        in_left = containsTarget(root.left, val)
+        in_right = containsTarget(root.right, val)
+        # return True if target in either/both subtree
+        return in_left or in_right
 
 """
-algo: find_max
+000. Find Max of Binary Tree
+code: https://github.com/onlypham/tangents
+
 input: node
 output: current_max (int)
-time: O(N)
+time: O(N) -> visit every node once
 
 state: none
-
 process: get max of left/right subtree & current node's value
-
-return: tell parent current_max of my subtree (int)
+return: tell parent current_max of my subtree
 """
 
-def find_max(node: Node) -> int:
-  if not node:
-    return float('-inf') 
-  left_subtree_current_max = find_max(node.left)
-  right_subtree_current_max = find_max(node.right)
-  return max(node.val, left_subtree_current_max, right_subtree_current_max)
-
-def test2():
-    assert find_max(tree1) == 6
-    assert find_max(tree2) == 9
-    assert find_max(tree3) == 11
-    print("Paw-🐶-some Job!")
+class Solution:
+    def findMax(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return float('-inf')
+        # find max of left/right subtree
+        left_max = findMax(node.left)
+        right_max = findMax(node.right)
+        # return max of left/right subtree & current node's value
+        return max(node.val, left_max, right_max)
 
 """
 104. Maximum Depth of Binary Tree (Easy)
-https://leetcode.com/problems/maximum-depth-of-binary-tree/
+leet: https://leetcode.com/problems/maximum-depth-of-binary-tree/
+code: https://github.com/onlypham/tangents
 
 input: node (depth defined by # of NODES not edges)
 output: current_depth (int)
-time: O(N)
+time: O(N) -> visit every node once
+space: O(N) -> recursive stack
 
 state: none
-
 process: get max of left/right subtree depth & add 1 for current node
-
-return: tell parent current_depth of my subtree (int)
+return: tell parent current_depth of my subtree
 """
 
-def max_depth(node: Node) -> int:
-    if not node:
-        return 0
-    left_subtree_depth = max_depth(node.left)
-    right_subtree_depth = max_depth(node.right)
-    # current node adds one to depth
-    return max(left_subtree_depth, right_subtree_depth) + 1    
-
-def test3():
-    assert max_depth(tree1) == 3
-    assert max_depth(tree2) == 4
-    assert max_depth(tree3) == 5
-    print("Paw-🐶-some Job!")
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        # null node adds 0 to depth
+        if not root:
+            return 0
+        # find maxDepth of both left/right subtree
+        left_depth = self.maxDepth(root.left)
+        right_depth = self.maxDepth(root.right)
+        # current node adds one to depth
+        return max(left_depth, right_depth) + 1
 
 """
 1448. Count Good Nodes in Binary Tree (Medium)
-https://leetcode.com/problems/count-good-nodes-in-binary-tree/submissions/
+leet: https://leetcode.com/problems/count-good-nodes-in-binary-tree/submissions/
+code: https://github.com/onlypham/tangents
 
 input: node 
-output: # of good_nodes (int) 
-    (good == path from root to X where no node.val > X)
-time: O(N)
+output: # of good_nodes (int) where good == path from root to X where no node.val > X
+time: O(N) -> visit every node once
+space: O(H) -> height of tree
 
 state: tell children what current_max is
-
 process: count good_nodes in left/right subtree & add 1 if current node == good
-
 return: tell parent how many good_nodes in my subtree (int)
 """
 
-def good_nodes(node: Node) -> int:
-    def dfs(node, current_max):
-        if not node:
-            return 0
-        # use state (current_max) to see if current node is good!
-        count = 1 if node.val >= current_max else 0
-        # update new_current_max (include current node's value)
-        new_current_max = max(current_max, node.val)
-        # add good nodes from left/right subtree
-        good_nodes_in_left_subtree = dfs(node.left, new_current_max)
-        good_nodes_in_right_subtree = dfs(node.right, new_current_max)
-        count += good_nodes_in_left_subtree + good_nodes_in_right_subtree
-        return count 
-    return dfs(node, -float('inf'))
-
-def test4():
-    assert good_nodes(tree1) == 4
-    assert good_nodes(tree2) == 3
-    assert good_nodes(tree3) == 3
-    print("Paw-🐶-some Job!")
+class Solution:
+    def goodNodes(self, root: TreeNode) -> int:
+        def dfs(root, current_max):
+            if not root:
+                return 0
+            # use state (current_max) to see if current node is good!
+            count = 1 if root.val >= current_max else 0
+            # update new_current_max (include current node's value)
+            new_max = max(current_max, root.val)
+            # add good nodes from left/right subtree
+            count += dfs(root.left, new_max)
+            count += dfs(root.right, new_max)
+            return count
+        return dfs(root, float('-inf'))
 
 """
 110. Balanced Binary Tree (Easy)
-https://leetcode.com/problems/balanced-binary-tree/
+leet: https://leetcode.com/problems/balanced-binary-tree/
+code: https://github.com/onlypham/tangents
 
 input: node 
 output: True/False (use wrapped function tree_height(node) -> int)
-time: O(N)
+time: O(N) -> visit every node once
 
 state: none
-
-process: get height of left/right subtree. check if height difference > 1.
-    add one to current_height
-
+process: get height of left/right subtree. check if height difference > 1. add one to current_height
 return: tell parent current_height of my subtree OR -1 if unbalanced (int)
 """
-
-def is_balanced(node: Node) -> bool:
-    def tree_height(node):
-        if not node:
-            return 0
-        # get height of both subtrees
-        left_subtree_height = tree_height(node.left)
-        right_subtree_height = tree_height(node.right)
-        if left_subtree_height == -1 or right_subtree_height == -1:
-            return -1
-        if abs(left_subtree_height - right_subtree_height) > 1:
-            return -1
-        current_height = max(left_subtree_height, right_subtree_height) + 1
-        return current_height
-    return tree_height(node) != -1
-
-def test5():
-    assert is_balanced(tree1) == True
-    assert is_balanced(tree2) == True
-    assert is_balanced(tree3) == False
-    print("Paw-🐶-some Job!")
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        def treeHeight(root):
+            if not root:
+                return 0
+            # get height of both subtrees
+            left_height = treeHeight(root.left)
+            right_height = treeHeight(root.right)
+            # if either subtree is unbalanced return -1
+            if left_height == -1 or right_height == -1:
+                return -1
+            # calculate if height difference is unbalanced
+            if abs(left_height - right_height) > 1:
+                return -1
+            # return max height of subtree + 1 for current node
+            return max(left_height, right_height) + 1
+        return treeHeight(root) != -1
 
 """
-297. Serialize and Deserialize Binary Tree (Hard)
-https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+297. Serialize & Deserialize Binary Tree (Hard)
+leet: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+code: https://github.com/onlypham/tangents
 
 input: node / string
 output: string / node
-time: O(N)
+time: O(N) -> visit every node once
 
-serialize: pre-order traversal appending each value to a list. append 'x' and return if node is None.
-
-deserialize: iter (next) through list of values. pre-order traversal creating node based on value. return if value == "x".
+serialize: pre-order traversal appending each value to a string separated by a space. append 'x' and return if node is None.
+deserialize: pre-order traversal creating node based on value. return None if value == "x".
 """
 
-def seralize(node: Node) -> str:
-    res = []
-    def dfs(node):
-        if not node:
-            res.append('x')
-            return
-        # process current node, then left, then right
-        res.append(str(node.val))
-        dfs(node.left)
-        dfs(node.right)
-    dfs(node)
-    return ' '.join(res)
+class Codec:
 
-def deserialize(str: str) -> Node:
-    def dfs(nodes):
-        val = next(nodes)
-        if val == "x":
-            return
-        # create current node, then left, then right
-        cur = Node(int(val))
-        cur.left = dfs(nodes)
-        cur.right = dfs(nodes)
-    return dfs(iter(str.split()))
-
-def test6():
-    str1 = "2 1 x 3 x x 4 x 6 x x"
-    str2 = "7 4 2 2 x x x 3 x 8 x x 4 3 x x 6 x 9 x x"
-    str3 = "8 6 1 9 2 x x x x 11 x 5 x x 7 3 x 4 x x 6 x x"
-    assert seralize(tree1) == str1
-    assert seralize(tree2) == str2
-    assert seralize(tree3) == str3
-    deserialize(str1)
-    deserialize(str2)
-    deserialize(str3)
-    print("Paw-🐶-some Job!")
+    def serialize(self, root):
+        # if null, demark as special character
+        if not root:
+            return 'x'
+        # return string of current node's value, left child & right child
+        return ' '.join([str(root.val), self.serialize(root.left), self.serialize(root.right)])
+        
+    def deserialize(self, data):
+        # use self.data since data stream consumed as we build left subtree
+        self.data = data
+        # base case: no tree
+        if self.data[0] == 'x':
+            return None
+        # recreate tree in pre-order traversal: current, left, right
+        node = TreeNode(self.data[:self.data.find(' ')]) 
+        node.left = self.deserialize(self.data[self.data.find(' ')+1:])
+        node.right = self.deserialize(self.data[self.data.find(' ')+1:])
+        return node
 
 """
 236. Lowest Common Ancestor of a Binary Tree (Medium)
-https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+leet: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+code: https://github.com/onlypham/tangents
 
 input: node (each node value unique & both targets exist in tree)
 output: node
-time: O(N)
+time: O(N) -> visit every node once
 
-concept: if val == target, pass information up the tree. two streams of information will trickle up and eventually meet at LCA!
+concept: if val == p/q, pass information up the tree. two streams of information will trickle up and eventually meet at LCA!
 
 state: tell children what target to look for
-
 process: if both left/right subtree non-null, combine into LCA and return current node, else pass up children's info or null
-
 return: tell parent if LCA/target found otherwise null 
 """
 
-def lowest_common_ancestor(node: Node, target1: int, target2: int) -> Node:
-    if not node:
-        return None
-    # return if either target1/target2 found 
-    if node.val == target1 or node.val == target2:
-        return node
-    # check if LCA/target is in either left/right subtree
-    left = lowest_common_ancestor(node.left, target1, target2)
-    right = lowest_common_ancestor(node.right, target1, target2)
-    # if both targets found, combine into LCA & return
-    if left and right:
-        return node
-    # at this point, either/both left/right are null, return LCA/target
-    if left:
-        return left
-    if right:
-        return right
-    # no LCA/target found
-    return None
-
-def test7():
-    assert lowest_common_ancestor(tree1, 3, 4) == tree1
-    assert lowest_common_ancestor(tree3, 2, 5) == tree3.left
-    assert lowest_common_ancestor(tree3, 7, 4) == tree3.right
-    print("Paw-🐶-some Job!")
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if not root:
+            return None
+        # return if either p/q found 
+        if root == p or root == q:
+            return root
+        # see if LCA/p/q found in either subtree
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+        # if both targets found, combine into LCA & return
+        if left and right:
+            return root
+        # either left/right OR both subtrees are null, so just pass either
+        # if LCA/p/q not found in current node & left/right subtree, return None
+        return left or right
 
 """
 Binary Search Tree
@@ -342,143 +258,103 @@ BST > Hash: sorted, look up 1st element greater/smaller than lookup,
 """
 
 """
-tree4:
-            5
-        3       6         
-      x   4   x   9
-         x x     x x
-"""
-
-tree4 = make_tree(iter([5, 3, "x", 4, "x", "x", 6, "x", 9, "x", "x"]), int)
-
-"""
-tree5:
-                     6
-            3               8         
-        2       4        7      9
-      1   x   x   5    x   x  x   x
-     x x         x x
-"""
-
-tree5 = make_tree(iter([6, 3, 2, 1, "x", "x", "x", 4, "x", 5, "x", "x", 8, 7, "x", "x", 9, "x", "x"]), int)
-
-
-"""
 700. Search in a Binary Search Tree (Easy)
-https://leetcode.com/problems/search-in-a-binary-search-tree/
+leet: https://leetcode.com/problems/search-in-a-binary-search-tree/
+code: https://github.com/onlypham/tangents
 
 input: node, target
-output: True/False
-time: O(logN)
+output: node
+time: O(logN) -> height of tree
 
 state: tell children what target to look for
-
 process: if target is less than my value, search left subtree
-
-return: tell parent if i'm the target or in subtree (bool)
+return: tell parent if i'm the target node or if its in my left/right subtree
 """
 
-def search_binary_tree(node: Node, target: int) -> bool:
-    if not node:
-        return False
-    if node.val == target:
-        return True
-    elif target < node.val:
-        return search_binary_tree(node.left, target)
-    else:
-        return search_binary_tree(node.right, target)
-
-def test8():
-    assert search_binary_tree(tree4, 1) == False
-    assert search_binary_tree(tree4, 9) == True
-    assert search_binary_tree(tree5, 9) == True
-    print("Paw-🐶-some Job!")
+class Solution:
+    def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        if not root:
+            return None
+        if root.val == val:
+            return root
+        # if value is smaller than node's current value, search left subtree
+        if val < root.val:
+            return self.searchBST(root.left, val)
+        else:
+            return self.searchBST(root.right, val)
 
 """
 98. Validate Binary Search Tree (Medium)
-https://leetcode.com/problems/validate-binary-search-tree/
+leet: https://leetcode.com/problems/validate-binary-search-tree/
+code: https://github.com/onlypham/tangents
 
 input: node
 output: True/False
-time: O(N)
+time: O(N) -> visit every node once
 
 state: tell children the range of acceptable values to be in
-
 process: check with state to see if current node has valid number
-
 return: tell parent if I am a valid binary subtree
 """
 
-def valid_binary_tree(node: Node) -> bool:
-    def dfs(node, min, max):
-        if not node:
-            return True
-        # if current node value inconsistent, return False
-        if node.val <= min or node.val >= max:
-            return False
-        return dfs(node.left, min, node.val) and dfs(node.right, node.val, max)
-    return dfs(node, float('-inf'), float('inf'))
-
-def test9():
-    assert valid_binary_tree(tree1) == False
-    assert valid_binary_tree(tree2) == False
-    assert valid_binary_tree(tree3) == False
-    assert valid_binary_tree(tree4) == True
-    assert valid_binary_tree(tree5) == True
-    print("Paw-🐶-some Job!")
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        def dfs(root, min, max):
+            if not root:
+                return True
+            # ensure current node is strictly within bounds
+            if root.val <= min or root.val >= max:
+                return False
+            # check if both left/right subtrees are valid
+            left = dfs(root.left, min, root.val)
+            right = dfs(root.right, root.val, max)
+            # return True only if both subtrees are valid
+            return left and right
+        return dfs(root, float('-inf'), float('inf'))
 
 """
 701. Insert into a Binary Search Tree (Medium)
-https://leetcode.com/problems/insert-into-a-binary-search-tree/
+leet: https://leetcode.com/problems/insert-into-a-binary-search-tree/
+code: https://github.com/onlypham/tangents
 
-input: bst, value
+input: node, value
 output: node
-time: O(N)
+time: O(logN) -> height of the tree
 
 state: tell children the value to be inserted
-
-process: if value > than current node's value, recursively call insert_bst and set equal to right subtree
-
-return: tell parent the newly inserted Node (or current if already exists)
+process: if val less then current node's value, insert into left subtree
+return: tell parent the newly inserted Node (or current if already created)
 """
 
-def insert_bst(node: Node, value: int) -> Node:
-    # if null create new node
-    if not node:
-        return Node(value)
-    if value > node.val:
-        node.right = insert_bst(node.right, value)
-    elif value < node.val:
-        node.left = insert_bst(node.left, value)
-    # value already exists
-    return node
-
-def test10():
-    assert seralize(insert_bst(tree4, 10)) == "5 3 x 4 x x 6 x 9 x 10 x x"
-    assert seralize(insert_bst(tree5, 10)) == "6 3 2 1 x x x 4 x 5 x x 8 7 x x 9 x 10 x x"
-    print("Paw-🐶-some Job!")
+class Solution:
+    def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        # we can insert Node here
+        if not root:
+            return TreeNode(val)
+        # if value less then current node's value, insert into left subtree
+        if val < root.val:
+            root.left = self.insertIntoBST(root.left, val)
+        else:
+            root.right = self.insertIntoBST(root.right, val)
+        return root
 
 """
 226. Invert Binary Tree (Easy)
-https://leetcode.com/problems/invert-binary-tree/
+leet: https://leetcode.com/problems/invert-binary-tree/
+code: https://github.com/onlypham/tangents
 
 input: node
 output: node
 time: O(N)
 
 state: none
-
 process: none
-
 return: pass to the parent the inverted version of the curretn subtree
 """
 
-def invert_binary_tree(node: Node) -> Node:
-    if not node:
-        return None
-    return Node(node.val, invert_binary_tree(node.right), invert_binary_tree(node.left))
-
-def test11():
-    assert seralize(invert_binary_tree(tree4)) == "5 6 9 x x x 3 4 x x x"
-    assert seralize(invert_binary_tree(tree5)) == "6 8 9 x x 7 x x 3 4 5 x x x 2 x 1 x x"
-    print("Paw-🐶-some Job!")
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return None
+        # simply create new TreeNode with swapped & inverted left/right subtree
+        return TreeNode(root.val, self.invertTree(root.right), self.invertTree(root.left))
