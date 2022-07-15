@@ -17,16 +17,25 @@ Think: "how can i apply a filter to an array & imagine an array of booleans"
 
 """
 704. Binary Search (Easy)
-leet: https://leetcode.com/problems/binary-search/
-code: https://github.com/onlypham/tangents
+Leet: https://leetcode.com/problems/binary-search/
+Code: https://github.com/onlypham/tangents
 
-input: nums -> [1, 2, *3*, 4, 8], 3
-output: index -> 2
-idea: discard half of array based on mid
-time: O(logN)
+Problem: Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+Input: nums -> [1, 2, *3*, 4, 8], 3
+Output: index -> 2
+Other: You must write an algorithm with O(log n) runtime complexity.
+
+Framework: Binary Search
+Giveaways: Everytime we make a binary decision to shrink the search space. We will discard the left or right side of the array every iteration.
+Idea: See if midpoint is our target. If the target is smaller, search the left subarray, else right. Continue until target found.
+
+Complexity:
+Time: O(logN) since the search spaces reduces by 2 every recursive call.
+Space: O(1)
 """
 
 class Solution:
+
     def search(self, nums: List[int], target: int) -> int:
         left, right = 0, len(nums) - 1
         # ensure that we allow left == right
@@ -44,15 +53,22 @@ class Solution:
 
 """
 000. First True in Sorted Boolean Array
-code: https://github.com/onlypham/tangents
+Code: https://github.com/onlypham/tangents
 
-input: nums -> [False, False, *True*, True, True]
-output: index -> 2
-idea: {binarySearch} but update index everytime True found
-time: O(logN)
+Input: nums -> [False, False, *True*, True, True]
+Output: index -> 2
+
+Framework: Binary Search
+Giveaways: Everytime we make a binary decision to shrink the search space. We will discard the left or right side of the array every iteration.
+Idea: reduces to {binarySearch} but update index everytime True found
+
+Complexity:
+Time: O(logN) since the search spaces reduces by 2 every recursive call.
+Space: O(1)
 """
 
 class Solution:
+
     def firstTrue(self, nums: List[bool]) -> int:
         left, right = 0, len(nums) - 1
         index = -1
@@ -69,20 +85,26 @@ class Solution:
 
 """
 000. First Element Bigger than Target in Sorted Array
-code: https://github.com/onlypham/tangents
+Code: https://github.com/onlypham/tangents
 
-input: nums
-output: index
-idea: {firstTrue} after applying (nums[mid] >= target) filter
+Input: nums
+Output: index
+
+Framework: Binary Search
+Giveaways: Everytime we make a binary decision to shrink the search space. We will discard the left or right side of the array every iteration.
+Idea: reduces to {firstTrue} after applying (nums[mid] >= target) filter
 
     [2, 3, 4, 5, 6, 8, 9] target == 7
     [F, F, F, F, F, T, T] after applying (nums[mid] >= 7) filter
-    reduces {firstTrue} == value of left after loop
+    reduces to {firstTrue} == value of left after loop
 
-time: O(logN)
+Complexity:
+Time: O(logN) since the search spaces reduces by 2 every recursive call.
+Space: O(1)
 """
 
 class Solution:
+
     def firstElement(nums: list[int], target: int) -> int:
         left, right = 0, len(nums) - 1
         while left <= right:
@@ -96,15 +118,22 @@ class Solution:
 
 """
 000. First Occurence of Element in Sorted Array
-code: https://github.com/onlypham/tangents
+Code: https://github.com/onlypham/tangents
 
-input: nums
-output: index
-idea: modified {firstTrue} but only save index when == target
-time: O(logN)
+Input: nums
+Output: index
+
+Framework: Binary Search
+Giveaways: Everytime we make a binary decision to shrink the search space. We will discard the left or right side of the array every iteration.
+Idea: reduces to {firstTrue} but only save index when == target
+
+Complexity:
+Time: O(logN) since the search spaces reduces by 2 every recursive call.
+Space: O(1)
 """
 
 class Solution:
+
     def firstOccurrence(nums: list[int], target: int) -> int:
         left, right = 0, len(nums) - 1
         index = -1
@@ -124,21 +153,27 @@ class Solution:
 
 """
 69. Sqrt(x) (Easy)
-leet: https://leetcode.com/problems/sqrtx/
-code: https://github.com/onlypham/tangents
+Leet: https://leetcode.com/problems/sqrtx/
+Code: https://github.com/onlypham/tangents
 
-input: x
-output: int == floor(squareRoot)
-idea: {lastFalse} after applying (mid * mid > n) filter
+Input: x
+Output: int == floor(squareRoot)
+
+Framework: Binary Search
+Giveaways: Everytime we make a binary decision to shrink the search space. We will discard the left or right side of the array every iteration.
+Idea: reduces to {lastFalse} after applying (mid * mid > n) filter
 
     [1, 2, 3, 4, 5, 6, 7, 8] given n == 8, imagine list of size 8
     [F, F, T, T, T, T, T, T] after applying (mid * mid > 8) filter
     reduces to {lastFalse} == right index
 
-time: O(logN)
+Complexity:
+Time: O(logN) since the search spaces reduces by 2 every recursive call.
+Space: O(1)
 """
 
 class Solution:
+
     def mySqrt(self, x: int) -> int:
         left, right = 0, x
         while left <= right:
@@ -154,21 +189,27 @@ class Solution:
 
 """
 153. Find Minimum in Rotated Sorted Array (Medium)
-leet: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
-code: https://github.com/onlypham/tangents
+Leet: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+Code: https://github.com/onlypham/tangents
 
-input: nums
-output: element
-idea: {firstTrue}  after applying (arr[mid] <= arr[-1]) filter
+Input: nums
+Output: element
+
+Framework: Binary Search
+Giveaways: Everytime we make a binary decision to shrink the search space. We will discard the left or right side of the array every iteration.
+Idea: reduces to {firstTrue} after applying (arr[mid] <= arr[-1]) filter
 
     [4, 5, 6, 7, 8, 1, 2, 3] notice arr[-1] == 3
     [F, F, F, F, F, T, T, T] after applying (arr[mid] <= 3) filter
     reduces to {firstTrue} == left index
 
-time: O(logN)
+Complexity:
+Time: O(logN) since the search spaces reduces by 2 every recursive call.
+Space: O(1)
 """
 
 class Solution:
+
     def findMin(self, nums: List[int]) -> int:
         left, right = 0, len(nums)
         while left <= right:
@@ -182,23 +223,29 @@ class Solution:
 
 """
 162. Find Peak Element (Medium)
-leet: https://leetcode.com/problems/find-peak-element/
-code: https://github.com/onlypham/tangents
+Leet: https://leetcode.com/problems/find-peak-element/
+Code: https://github.com/onlypham/tangents
 
-input: nums -> [1, 2, 3, *4*, 3, 2, 1] 
+Input: nums -> [1, 2, 3, *4*, 3, 2, 1] 
     monotonically increase until peak then monotonically decrease
-output: index -> 3
-idea: {firstTrue} after applying (nums[mid] > nums[mid+1]) filter
+Output: index -> 3
+
+Framework: Binary Search
+Giveaways: Everytime we make a binary decision to shrink the search space. We will discard the left or right side of the array every iteration.
+Idea: reduces to {firstTrue} after applying (nums[mid] > nums[mid+1]) filter
 
     *Ensure right = len(nums) - 2 to prevent index out of range* 
     [1, 2, 3, 4, 5, 4, 3, 2, 1] 
     [F, F, F, F, T, T, T, T, T] after applying (nums[mid] > nums[mid+1]) filter
     reduces to {firstTrue} == left index
 
-time: O(logN)
+Complexity:
+Time: O(logN) since the search spaces reduces by 2 every recursive call.
+Space: O(1)
 """
 
 class Solution:
+
     def findPeakElement(self, nums: List[int]) -> int:
         left, right = 0, len(nums) - 2
         while left <= right:
@@ -212,12 +259,15 @@ class Solution:
 
 """
 1011. Capacity To Ship Packages Within D Days (Medium)
-leet: https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
-code: https://github.com/onlypham/tangents
+Leet: https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+Code: https://github.com/onlypham/tangents
 
-input: weights, days -> [1, 2, 3, 4, 5], 5
-output: min_capacity -> 3
-idea: {firstTrue} after applying (isFeasible) filter to range of capacities
+Input: weights, days -> [1, 2, 3, 4, 5], 5
+Output: min_capacity -> 3
+
+Framework: Binary Search
+Giveaways: Everytime we make a binary decision to shrink the search space. We will discard the left or right side of the array every iteration.
+Idea: reduces to {firstTrue} after applying (isFeasible) filter to range of capacities
 
     weights = [1, 2, 3, 4, 5] where days == 5
 
@@ -229,10 +279,13 @@ idea: {firstTrue} after applying (isFeasible) filter to range of capacities
     [F, F, F, F, ..., F, T, T, T] after applying (isFeasible) filter
     reduces to {firstTrue} == left index
 
-time: O(NlogN) == isFeasible is O(N) * binary search is O(logN)
+Complexity:
+Time: O(NlogN) == isFeasible is O(N) * binary search is O(logN)
+Space: O(1)
 """
 
 class Solution:
+    
     def shipWithinDays(self, weights: List[int], days: int) -> int:
         def isFeasible(capacity):
             req_days = 1 # will always need at least one day
@@ -257,12 +310,15 @@ class Solution:
 
 """
 000. Minimum Reading Time For Workers
-code: https://github.com/onlypham/tangents
+Code: https://github.com/onlypham/tangents
 
-input: times, workers -> [7, 2, 5, 10, 8], 2
+Input: times, workers -> [7, 2, 5, 10, 8], 2
     each worker must read contigious subarrays
-output: min_time -> 18 (7+2+5 and 10+8)
-idea: {firstTrue} after applying (isFeasible) filter to range of times
+Output: min_time -> 18 (7+2+5 and 10+8)
+
+Framework: Binary Search
+Giveaways: Everytime we make a binary decision to shrink the search space. We will discard the left or right side of the array every iteration.
+Idea: reduces to {firstTrue} after applying (isFeasible) filter to range of times
 
     times = [7, 2, 5, 10, 8] where workers == 2
 
@@ -274,10 +330,13 @@ idea: {firstTrue} after applying (isFeasible) filter to range of times
     [F, F, F, F, F, ..., F, T, T, T] after applying (isFeasible) filter
     reduces to {firstTrue} == left index
 
-time: O(NlogN) == isReadable is O(N) * binary search is O(logN)
+Complexity:
+Time: O(NlogN) == isReadable is O(N) * binary search is O(logN)
+Space: O(1)
 """
 
 class Solution:
+
     def minReadTime(self, times: List[int], workers: int) -> int:
         def isReadable(time_limit):
             # essentially same logic as is_feasible
