@@ -1,5 +1,6 @@
+Here are my solutions for a selected number of Leetcode Problems. I would recommend to solve them in the following order.
 
-# BINARY_SEARCH.PY
+## BINARY_SEARCH.PY
 
 704. Binary Search (Easy)
 69. Sqrt(x) (Easy)
@@ -7,7 +8,7 @@
 162. Find Peak Element (Medium)
 1011. Capacity To Ship Packages Within D Days
 
-# DEPTH_FIRST.PY
+## DEPTH_FIRST.PY
 
 104. Maximum Depth of Binary Tree (Easy)
 1448. Count Good Nodes in Binary Tree (Medium)
@@ -19,7 +20,7 @@
 701. Insert into a Binary Search Tree (Medium)
 226. Invert Binary Tree (Easy)
 
-# BACKTRACKING.PY
+## BACKTRACKING.PY
 
 257. Binary Tree Paths (Easy)
 46. Permutations (Medium)
