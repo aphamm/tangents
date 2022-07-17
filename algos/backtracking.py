@@ -10,6 +10,16 @@ Combinatorial Search == DFS on State-Space tree
 Identify State: what we need to have to know we reached a solution
     - State to decide which child node to visit next & which ones to prune
     - ie. letter's already selected, numbers guessed, path taken
+
+257. Binary Tree Paths (Easy)
+46. Permutations (Medium)
+17. Letter Combinations of a Phone Number (Medium)
+509. Fibonacci Number (Easy)
+139. Word Break (Medium)
+91. Decode Ways (Medium)
+131. Palindrome Partitioning (Medium)
+39. Combination Sum (Medium)
+39. Subsets (Medium)
 """
 
 class Template:
