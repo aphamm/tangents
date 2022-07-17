@@ -31,3 +31,10 @@ Here are my solutions for a selected number of Leetcode Problems. I would recomm
 131. Palindrome Partitioning (Medium)
 39. Combination Sum (Medium)
 39. Subsets (Medium)
+
+## BREADTH_FIRST.PY
+
+102. Binary Tree Level Order Traversal (Medium)
+103. Binary Tree Zigzag Level Order Traversal (Medium)
+199. Binary Tree Right Side View (Medium)
+111. Minimum Depth of Binary Tree (Easy)
