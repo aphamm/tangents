@@ -38,3 +38,16 @@ Here are my solutions for a selected number of Leetcode Problems. I would recomm
 103. Binary Tree Zigzag Level Order Traversal (Medium)
 199. Binary Tree Right Side View (Medium)
 111. Minimum Depth of Binary Tree (Easy)
+
+## GRAPHS.PY
+
+733. Flood Fill (Easy)
+200. Number of Islands (Medium)
+1197. Minimum Knight Moves (Medium)
+286. Walls and Gates (Medium)
+752. Open the Lock (Medium)
+127. Word Ladder (Hard)
+773. Sliding Puzzle (Hard)
+444. Sequence Reconstruction (Medium)
+269. Alien Dictionary (Hard)
+207. Course Schedule (Medium)
