@@ -51,3 +51,17 @@ Here are my solutions for a selected number of Leetcode Problems. I would recomm
 444. Sequence Reconstruction (Medium)
 269. Alien Dictionary (Hard)
 207. Course Schedule (Medium)
+
+## TWO_POINTERS.PY
+
+26. Remove Duplicates from Sorted Array (Easy)
+876. Middle of the Linked List (Easy)
+167. Two Sum II - Input Array Is Sorted (Medium)
+125. Valid Palindrome (Easy)
+3. Longest Substring Without Repeating Characters (Medium)
+438. Find All Anagrams in a String (Medium)
+76. Minimum Window Substring (Hard)
+560. Subarray Sum Equals K (Medium)
+141. Linked List Cycle (Easy)
+1537. Get the Maximum Score (Hard)
+42. Trapping Rain Water (Hard)
