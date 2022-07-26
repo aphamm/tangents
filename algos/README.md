@@ -49,7 +49,7 @@ Here are my solutions for a selected number of Leetcode Problems. I would recomm
 127. Word Ladder (Hard)
 773. Sliding Puzzle (Hard)
 444. Sequence Reconstruction (Medium)
-269. Alien Dictionary (Hard)
+269. Alien Dictionary (Hard)b
 207. Course Schedule (Medium)
 
 ## TWO_POINTERS.PY
@@ -65,3 +65,13 @@ Here are my solutions for a selected number of Leetcode Problems. I would recomm
 141. Linked List Cycle (Easy)
 1537. Get the Maximum Score (Hard)
 42. Trapping Rain Water (Hard)
+
+## HEAP.PY
+
+973. K Closest Points to Origin (Medium)
+23. Merge k Sorted Lists (Hard)
+378. Kth Smallest Element in a Sorted Matrix (Medium)
+767. Reorganize String (Medium)
+215. Kth Largest Element in an Array (Medium)
+263. Ugly Number (Easy)
+295. Find Median from Data Stream (Hard)
