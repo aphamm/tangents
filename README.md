@@ -75,6 +75,18 @@ the order in which I wish I learned things
 
     - [Importance Sampling (13 mins)](https://www.youtube.com/watch?v=C3p2wI4RAi8)
 
+# algorithms
+
+- backtracking
+
+    - [Leetcode 46. Permutations : Introduction to backtracking](https://www.youtube.com/watch?v=Nabbpl7y4Lo): (7/11/22)
+    - [The Backtracking Blueprint: The Legendary 3 Keys To Backtracking Algorithms](https://www.youtube.com/watch?v=Zq4upTEaQyM&t=722s): (7/11/22)
+
+- dynamic
+
+    - [5 Simple Steps for Solving Dynamic Programming Problems](https://www.youtube.com/watch?v=aPQY__2H3tE): (7/11/22)
+    - [Find The Longest Increasing Subsequence - Dynamic Programming Fundamentals](https://www.youtube.com/watch?v=fV-TF4OvZpk): (7/11/22)
+
 ## node
 
 - [In the Loop (35 mins)](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
@@ -111,5 +123,12 @@ the order in which I wish I learned things
     - [I watched 300 hours of music production streams (16 mins)](https://www.youtube.com/watch?v=JQHvtinwQQ8&list=PL5mE9EP9ql4CBA-0NixZJK4VNk7gVKVVk&index=9)
 
 ## physiology
+
+- handstand
+
+    - [LEARN a Handstand in 6 SIMPLE Steps! (14 mins)](https://www.youtube.com/watch?v=hRmZu6UdPCk)
+    - [Do This Routine Every Morning | Handstand (13 mins)](https://www.youtube.com/watch?v=X6SuKUUghSE)
+    - [Why Your Handstand Isn't Straight (And How To Fix It!) (8 mins)](https://www.youtube.com/watch?v=jmF7prkqDho)
+
 
 - [How To Get A Huge Bench Press (12 mins)](https://www.youtube.com/watch?v=vcBig73ojpE)

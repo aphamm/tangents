@@ -56,9 +56,6 @@ Time: O(N) since we will iterate through the entire array
 Space: O(1) as we do not have to save any additional values
 """
 
-from lib2to3.pgen2.token import RIGHTSHIFTEQUAL
-
-
 class Solution:
 
     def removeDuplicates(self, nums: List[int]) -> int:
