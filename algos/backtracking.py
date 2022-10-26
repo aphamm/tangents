@@ -19,7 +19,7 @@ Identify State: what we need to have to know we reached a solution
 91. Decode Ways (Medium)
 131. Palindrome Partitioning (Medium)
 39. Combination Sum (Medium)
-39. Subsets (Medium)
+78. Subsets (Medium)
 """
 
 class Template:
@@ -117,7 +117,7 @@ Output: List of all permutations
 Other: Return as a List of Lists
 
 Framework: Backtracking
-Giveaways: We have a set of choices we wish to explore. At each choice, we are constrained by the letters we have already used. Our goal is to use all the numbers to reach a complete permutation.
+Giveaways: We have a set of choices we wish to explore. At each choice, we are constrained by the numbers we have already used. Our goal is to use all the numbers to reach a complete permutation.
 Big Picture: We wish to explore all paths given by nums. We choose a number, follow all its paths that reach a complete permutation and then backtrack by unchoosing that number.
 
 Choice: Choose a number in num.
@@ -390,7 +390,7 @@ class Solution:
             count = 0
             # add number of valid decodings if we "eat" one digit
             if 0 < int(s[index:index+1]) <= 9:
-			    count += dfs(index+1, memo)
+                count += dfs(index+1, memo)
             # add number of valid decodings if we "eat" two digits
             if 10 <= int(s[index:index+2]) <= 26:
                 count += dfs(index+2, memo)
@@ -503,7 +503,7 @@ class Solution:
         return res
 
 """
-39. Subsets (Medium)
+78. Subsets (Medium)
 Leet: https://leetcode.com/problems/subsets/
 Code: https://github.com/onlypham/tangents
 

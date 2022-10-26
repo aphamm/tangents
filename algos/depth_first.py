@@ -349,7 +349,7 @@ time: O(N)
 
 state: none
 process: none
-return: pass to the parent the inverted version of the curretn subtree
+return: pass to the parent the inverted version of the current subtree
 """
 
 class Solution:
